@@ -1,8 +1,13 @@
 import requests
 from bs4 import BeautifulSoup
 
-def valid_address(addr):
-    return isinstance(addr,(list,tuple)) and len(addr) == 2 and isinstance(addr[0],str) and isinstance(addr[1],int)
+# TODO read proxy_list.txt and populate into tuple
+# then test the address by sending request with proxies = {'http':'addres:port'}
+# res = request.get('https://httpbin.org/ip',proxies=proxies)
+# check if res['origin'] == proxy[0][0]
+# below funct is to check if in valid add format
+# def valid_address(addr):
+#     return isinstance(addr,(list,tuple)) and len(addr) == 2 and isinstance(addr[0],str) and isinstance(addr[1],int)
 
 def write_list_to_file(list):
     with open("proxy_list.txt","w") as file:
